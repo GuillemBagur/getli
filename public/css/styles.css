@@ -1,0 +1,360 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 99vw;
+  overflow-x: hidden;
+  background: #476adc;
+  background: -webkit-linear-gradient(to right, #b56bb8, #476adc);
+  background: linear-gradient(to right, #b56bb8, #476adc);
+}
+
+.wrapper {
+  position: relative;
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 40%;
+}
+
+.title {
+  top: 10%;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 5rem;
+  letter-spacing: 1.5rem;
+}
+
+.main-form {
+  width: 100%;
+  z-index: 4;
+  padding: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+}
+
+.main-form__field-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.input {
+  outline: none;
+}
+
+.input--main {
+  border: 0;
+  padding: 1.2rem 1.6rem;
+  border-radius: 200px;
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.main-form__input {
+  width: 85%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 1.1rem;
+}
+
+.button {
+  border: 0;
+  border-radius: 200px;
+  cursor: pointer;
+  color: white;
+}
+
+.main-button {
+  width: 15%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.15);
+  font-size: 1.1rem;
+  z-index: 2;
+  background-color: #a597da;
+  position: relative;
+}
+
+.main-button__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: inherit;
+}
+
+.main-button__fluid {
+  position: absolute;
+  height: 202%;
+  width: 102%;
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  animation-duration: 3.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.animated .main-button__fluid {
+  animation-name: button-fluid;
+}
+
+@keyframes button-fluid {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(101%);
+  }
+}
+.animation {
+  width: 100%;
+  height: 115px;
+  position: absolute;
+  top: 53.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a597da;
+  width: 85%;
+  z-index: 3;
+  border-radius: 5px;
+}
+
+.animation__container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background-color: #a597da;
+}
+
+.animation__pipe {
+  height: 286.4px;
+  width: 2rem;
+  position: absolute;
+  right: 0;
+  transform: translateY(-172px);
+  background-color: #a597da;
+  overflow: hidden;
+  z-index: 1;
+  border-bottom-right-radius: 5px;
+}
+
+.animation__pipe::after {
+  content: "";
+  width: 102%;
+  height: 102%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(-100%);
+  animation-delay: 0s;
+  animation-duration: 8.8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.56, 0.22, 0.46, 0.97);
+  background-color: #b274bf;
+  z-index: 2;
+}
+
+.animated .animation__pipe::after {
+  animation-name: pipe-fluid;
+}
+
+@keyframes pipe-fluid {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.download-section {
+  padding: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 115px;
+  overflow: hidden;
+  border-radius: inherit;
+  border-top-right-radius: 0;
+  z-index: 6;
+}
+
+.waves {
+  content: "";
+  position: absolute;
+  height: 90px;
+  width: 102%;
+  bottom: 0;
+  left: 0;
+  animation-duration: 4.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.56, 0.22, 0.46, 0.97);
+  animation-delay: 3.3s;
+  transform: translateY(100%);
+  z-index: 5;
+}
+
+.animated .waves {
+  animation-name: container-fluid;
+}
+
+.waves__f-content, .main-button__f-content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #b274bf;
+  animation-name: waves;
+  animation-duration: 2s;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.main-button__f-content {
+  animation-duration: 1.7s;
+}
+
+@keyframes container-fluid {
+  0% {
+    transform: translateY(60%);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes waves {
+  0% {
+    clip-path: polygon(0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+.download-section__wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.download-methods-list {
+  display: flex;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  z-index: 3;
+}
+
+.download-methods-list__element {
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.5s;
+  backdrop-filter: blur(5px);
+  transform: none;
+  opacity: 0.4;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 6s;
+  pointer-events: none;
+}
+
+.animated .active .download-methods-list__element {
+  pointer-events: all;
+  animation-name: download-buttons;
+}
+
+.download-methods-list__element:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.05);
+  transition: all 0.5s;
+}
+
+.download-methods-list__element:active {
+  transform: translateY(-3px) scale(1.01);
+  transition: all 0.2s;
+}
+
+@keyframes download-buttons {
+  0% {
+    opacity: 0.4;
+    transform: none !important;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.download-methods-list__download-btn {
+  cursor: pointer !important;
+  padding: 0.6rem;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.icon {
+  user-select: none;
+  pointer-events: none;
+  height: 2.5rem;
+  aspect-ratio: 1/1;
+  display: block;
+  position: relative;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+.customers-list {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #a597da;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.customer-info__emails-list {
+  margin-top: 0.5rem;
+  list-style-type: none;
+  margin-bottom: 2rem;
+}
+
+.customer-info__email {
+  cursor: pointer;
+}
+
+.mb-3 {
+  height: 3rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
